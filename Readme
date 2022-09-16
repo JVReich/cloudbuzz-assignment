@@ -2,7 +2,11 @@ Instructions:
 
 The api can be invoked using th e following command:
 
-curl -d '{"num1":"8","num2":"9"}' -H 'Content-Type: application/json' https://1rid7rgofa.execute-api.us-east-1.amazonaws.com/test/-user/ > response.html && xdg-open response.html
+1. curl -d '{"num1":"8","num2":"9"}' -H 'Content-Type: application/json' https://1rid7rgofa.execute-api.us-east-1.amazonaws.com/test/-user/ > response.html && xdg-open response.html - 
+where the values are given as parameters at the command line. (first curly brackets)
+
+2. curl -d @./event.json -H 'Content-Type: application/json' https://1rid7rgofa.execute-api.us-east-1.amazonaws.com/test/-user/ > response.html && xdg-open response.html - where parameters are
+sourced from from a prepopulated file named event.json.
 
 At execution, a POST request will be sent to the api, the lambda function will process the data and return a result.
 the result is written into an html file in the current directory and printed to the browser.
